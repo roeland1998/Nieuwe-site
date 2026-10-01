@@ -179,6 +179,13 @@ footer {
     line-height: 1.6;
 }
 
+.allrightsreserved a {
+    color: var(--lichtgroen);
+    font-size: 1rem;
+    line-height: 1.6;
+    text-decoration: none;
+}
+
 .sociallinks {
     display: flex;
     gap: 1.5rem;
