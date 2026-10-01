@@ -1,0 +1,97 @@
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.filter-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 900px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 12px;
+    background-color: var(--paars); /* Je paarse kleur */
+    color: var(--donkergroen);
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease-out;
+}
+
+.filter-btn.active {
+    background-color: var(--lime);
+    transition: transform 0.05s ease-in; 
+}
+
+.gallery-item.is-hidden {
+    display: none !important;
+}
+
+.gallery-grid {
+  column-count: 3;
+  gap: 0.7rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.7rem 0 0.7rem;
+}
+
+.grid {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+}
+
+.cropfoto {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    object-fit: cover;
+    margin-bottom: 0.7rem;
+}
+
+.viervijf {
+    aspect-ratio: 6/7;
+    grid-row: span 2;
+}
+
+.eeneen {
+    aspect-ratio: 1/1;
+}
+
+.fotoingrid {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .gallery-grid {
+        column-count: 1;
+    }
+
+    .filter-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 500px;
+    }
+}
