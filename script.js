@@ -1,12 +1,12 @@
 const menuToggle = document.getElementById('menu-toggle');
 const navbarMenu = document.querySelector('.navbarmenu');
 
-    if (menuToggle && navbarMenu) {
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('is-active');
-            navbarMenu.classList.toggle('is-active');
-        });
-    }
+if (menuToggle && navbarMenu) {
+    menuToggle.addEventListener('click', () => {
+        menuToggle.classList.toggle('is-active');
+        navbarMenu.classList.toggle('is-active');
+    });
+}
 
 const filterButtons = document.querySelectorAll('.filter-btn');
 const galleryItems = Array.from(document.querySelectorAll('.gallery-item'));
@@ -35,7 +35,7 @@ function filterAndShuffle(selectedCategory) {
         // 3. Toon of verberg items op basis van de gekozen categorie
         // (.split(/\s+/) zorgt dat 'portet' of 'portret' netjes op losse woorden wordt gematcht)
         const categoriesArray = itemCategories.split(/\s+/);
-        
+
         if (selectedCategory === 'all' || categoriesArray.includes(selectedCategory)) {
             item.classList.remove('is-hidden');
         } else {

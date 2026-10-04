@@ -1,94 +1,341 @@
 <!DOCTYPE html>
 <html lang="nl">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="diensten.css">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap"
+        rel="stylesheet">
 
-  <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
-  <link href="img/roeland lenoir site.png" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: dark)">
-  <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="48x48">
-  <link href="img/roeland lenoir.svg" rel="apple-touch-icon" sizes="180x180">
-  <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="192x192">
-  <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="512x512">
+    <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="32x32" media="(prefers-color-scheme: light)">
+    <link href="img/roeland lenoir site.png" rel="icon" type="image/png" sizes="32x32"
+        media="(prefers-color-scheme: dark)">
+    <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="48x48">
+    <link href="img/roeland lenoir.svg" rel="apple-touch-icon" sizes="180x180">
+    <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="192x192">
+    <link href="img/roeland lenoir.svg" rel="icon" type="image/png" sizes="512x512">
 
-  <title>Voorbeelden</title>
+    <title>Voorbeelden</title>
 </head>
+
 <body>
-<header>
-    <section class="navbar-wrapper">
-        <nav>
-            <a href="index.html" class="logo-link-block">
-                <section class="logo-wrapper">
-                    <img class="logo-icon" src="img/roeland lenoir site.png" alt="Logo">
+    <header>
+        <section class="navbar-wrapper">
+            <nav>
+                <a href="index.html" class="logo-link-block">
+                    <section class="logo-wrapper">
+                        <img class="logo-icon" src="img/roeland lenoir site.png" alt="Logo">
+                    </section>
+                </a>
+
+                <!-- Hamburgerknop (3 streepjes) -->
+                <button class="hamburger-menu" id="menu-toggle" aria-label="Menu openen">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+
+                <!-- Navigatiemenu -->
+                <section class="navbarmenu">
+                    <a class="navlink" href="diensten.html">diensten</a>
+                    <a class="navlink" href="overmij.html">over mij</a>
+                    <a class="link-block mobile-only-button" href="contact.html">huur mij in</a>
                 </section>
-            </a>
 
-            <!-- Hamburgerknop (3 streepjes) -->
-            <button class="hamburger-menu" id="menu-toggle" aria-label="Menu openen">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+                <!-- Desktop contactknop -->
+                <section class="button-wrapper desktop-only-button">
+                    <a class="link-block" href="contact.html">huur mij in</a>
+                </section>
+            </nav>
+        </section>
+    </header>
 
-            <!-- Navigatiemenu -->
-            <section class="navbarmenu">
-                <a class="navlink" href="diensten.html">diensten</a>
-                <a class="navlink" href="overmij.html">over mij</a>
-                <a class="link-block mobile-only-button" href="contact.html">contact</a>
-            </section>
+    <main>
+        <section class="foto-section">
+            <div class="titel-en-par">
+                <h1>Een professionele portretfoto laten maken met karakter en sfeer.</h1>
+                <p>Wat leuk dat je enthousiast bent over mijn werk en erover denkt om mijn diensten te gebruiken! Om
+                    iedereen zo goed mogelijk te kunnen helpen heb ik verschillende pakketen opgesteld waar je uit kunt
+                    kiezen. Kijk wat er bij jou past en stuur mij een aanvraag! <br> Tot snel!</p>
+            </div>
+        </section>
+        <section class="kaarten-sectie">
+            <div class="kaarten-grid">
+                <div class="kaart">
+                    <div class="kaart-afbeelding">
+                        <img src="img/fotografie/CS_NSCF1171.webp" alt="Tweede foto van de shoot">
+                        <img src="img/fotografie/CS_NSCF1147 kopie.webp" alt="Derde foto van de shoot">
+                        <img src="img/fotografie/CS_NSCF1154 kopie.webp" alt="Vierde foto van de shoot">
+                        <img src="img/fotografie/CS_NSCF1168.webp" alt="Eerste foto van de shoot">
+                    </div>
+                    <div class="kaart-inhoud">
+                        <div class="titel-en-prijs">
+                            <h3 class="title">Op je mooist</h3>
+                            <p class="title price">€80</p>
+                        </div>
 
-            <!-- Desktop contactknop -->
-            <section class="button-wrapper desktop-only-button">
-                <a class="link-block" href="contact.html">contact</a>
-            </section>
-        </nav>
-    </section>
-</header>
+                        <button type="button" class="kaart-knop pakket-btn" data-pakket="Op je mooist (€80)">
+                            Dit wil ik!
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg id="Laag_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33.16 33.16">
+                                <!-- Generator: Adobe Illustrator 30.8.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 1)  -->
+                                <defs>
+                                    <style>
+                                        .st0 {
+                                            fill: none;
+                                            stroke: #00584b;
+                                            stroke-linecap: round;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 3.5px;
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="st0"
+                                    d="M17.84,21.63l5.03-5.05M22.87,16.58l-5.03-5.05M22.87,16.58h-12.59M31.69,16.58c0,8.36-6.76,15.14-15.1,15.14S1.48,24.95,1.48,16.58,8.24,1.44,16.58,1.44s15.1,6.78,15.1,15.14Z" />
+                            </svg>
+                        </button>
 
-  <main>
-    <section class="foto-section">
-        <div class="titel-en-par">
-            <h1>Deze pagina wordt nog gemaakt! Nog heel even geduld.</h1>
-            <p>Kom je snel terug? Ik beloof dat ik hard aan het werk ben om je straks volledig te kunnen voorzien van alle informatie die je zoekt. <br> Deal? Oke, tot snel!</p>
+                        <div class="inbegrepen">
+                            <p><strong>Inbegrepen:</strong>
+                            <ul>
+                                <li>Jij kiest welke 4 nabewerkte foto's je ontvangt</li>
+                                <li>We fotograferen je in 1 outfit</li>
+                                <li>+/- 30 minuten</li>
+                            </ul>
+                            <strong>Optioneel:</strong>
+                            <ul>
+                                <li>Extra nabewerkte foto's: €10 per foto</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kaart">
+                    <div class="kaart-afbeelding links">
+                        <img src="img/fotografie/por3 6;7.jpg"
+                            alt="Foto van een jonge vrouw, van onderaf gefotografeerd die lachend in de verte kijkt.">
+                        <img src="img/fotografie/DSCF1043 kopie.webp" alt="Tweede foto van de shoot">
+                        <img src="img/fotografie/DSCF1047 kopie.webp" alt="Derde foto van de shoot">
+                        <img src="img/fotografie/DSCF1116.webp" alt="Vierde foto van de shoot">
+                    </div>
+                    <div class="kaart-inhoud">
+                        <div class="titel-en-prijs">
+                            <h3 class="title">Op je mooist+</h3>
+                            <p class="title price">€150</p>
+                        </div>
+
+                        <button type="button" class="kaart-knop pakket-btn" data-pakket="Op je mooist+ (€150)">
+                            Dit wil ik!
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg id="Laag_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33.16 33.16">
+                                <!-- Generator: Adobe Illustrator 30.8.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 1)  -->
+                                <defs>
+                                    <style>
+                                        .st0 {
+                                            fill: none;
+                                            stroke: #00584b;
+                                            stroke-linecap: round;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 3.5px;
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="st0"
+                                    d="M17.84,21.63l5.03-5.05M22.87,16.58l-5.03-5.05M22.87,16.58h-12.59M31.69,16.58c0,8.36-6.76,15.14-15.1,15.14S1.48,24.95,1.48,16.58,8.24,1.44,16.58,1.44s15.1,6.78,15.1,15.14Z" />
+                            </svg>
+                        </button>
+
+                        <div class="inbegrepen">
+                            <p><strong>Inbegrepen:</strong>
+                            <ul>
+                                <li>Jij kiest welke 8 nabewerkte foto's je ontvangt</li>
+                                <li>We fotograferen je in 3 outfit</li>
+                                <li>Ruimte voor expirement en artistiekere portretten.</li>
+                                <li>+/- 50 minuten</li>
+                            </ul>
+                            <strong>Optioneel:</strong>
+                            <ul>
+                                <li>Extra nabewerkte foto's: €10 per foto</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="kaart">
+                    <div class="kaart-afbeelding">
+                        <img src="img/fotografie/DSCF1095 kopie.webp"
+                            alt="Foto van een jonge vrouw, van onderaf gefotografeerd die lachend in de verte kijkt.">
+                        <img src="img/fotografie/DSCF1107.webp" alt="Derde foto van de shoot">
+                        <img src="img/fotografie/DSCF1105 kopie.webp" alt="Vierde foto van de shoot">
+                        <img src="img/fotografie/DSCF1096 kopie.webp" alt="Tweede foto van de shoot">
+                    </div>
+                    <div class="kaart-inhoud">
+                        <div class="titel-en-prijs">
+                            <h3 class="title">Beide op je mooist</h3>
+                            <p class="title price">€??</p>
+                        </div>
+
+                        <button type="button" class="kaart-knop pakket-btn"
+                            data-pakket="Beide op je mooist (prijs op aanvraag)">
+                            Dit wil ik!
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg id="Laag_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 33.16 33.16">
+                                <!-- Generator: Adobe Illustrator 30.8.1, SVG Export Plug-In . SVG Version: 2.1.4 Build 1)  -->
+                                <defs>
+                                    <style>
+                                        .st0 {
+                                            fill: none;
+                                            stroke: #00584b;
+                                            stroke-linecap: round;
+                                            stroke-miterlimit: 10;
+                                            stroke-width: 3.5px;
+                                        }
+                                    </style>
+                                </defs>
+                                <path class="st0"
+                                    d="M17.84,21.63l5.03-5.05M22.87,16.58l-5.03-5.05M22.87,16.58h-12.59M31.69,16.58c0,8.36-6.76,15.14-15.1,15.14S1.48,24.95,1.48,16.58,8.24,1.44,16.58,1.44s15.1,6.78,15.1,15.14Z" />
+                            </svg>
+                        </button>
+
+                        <div class="inbegrepen">
+                            <p class="groepskorting">
+                                Wil jij en één of meer vriend(inn)en allemaal mooie nieuwe foto's,
+                                dan kunnen jullie samen een shoot sessie boeken waarin ik van jullie
+                                allemaal apart foto's maak. Voor groepen is de prijs flexibeler en
+                                daardoor op aanvraag.
+                            </p>
+                            <p>
+                                <strong>Inbegrepen:</strong>
+                            <ul>
+                                <li>Iedereen kiest 4 tot 8 nabewerkte foto's</li>
+                                <li>Hoeveelheid outfits, in overleg</li>
+                                <li>Tijd: zo lang als nodig</li>
+                            </ul>
+                            <strong>Optioneel:</strong>
+                            <ul>
+                                <li>Extra nabewerkte foto's: €10 per foto</li>
+                            </ul>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="popup-sectie">
+            <!-- De verduisterde achtergrond / overlay -->
+            <div id="emailModal" class="popup-overlay">
+
+                <!-- De witte kaart / venster van de pop-up -->
+                <div class="popup-kaart">
+
+                    <!-- Sluitknop (kruisje) -->
+                    <button type="button" class="popup-sluitknop" id="closeModalBtn"
+                        aria-label="Sluiten">&times;</button>
+
+                    <!-- TITEL EN SUBTITEL -->
+                    <h2 class="popup-titel">Aanvraag sturen</h2>
+                    <p class="popup-subtitel">Vul je gegevens in om de e-mail op te stellen.</p>
+
+                    <form id="emailForm" onsubmit="return false;">
+
+                        <!-- Voornaam -->
+                        <div class="formulier-groep">
+                            <label class="veld-label" for="voornaam">Voornaam *</label>
+                            <input type="text" id="voornaam" placeholder="Typ je voornaam..." required>
+                        </div>
+
+                        <!-- Pakketkeuze in de pop-up -->
+                        <div class="formulier-groep">
+                            <label class="veld-label" for="pakket">Kies een pakket *</label>
+                            <select id="pakket">
+                                <option value="Op je mooist (€80)">Op je mooist (€80)</option>
+                                <option value="Op je mooist+ (€150)">Op je mooist+ (€150)</option>
+                                <option value="Beide op je mooist (prijs op aanvraag)">Beide op je mooist (prijs op
+                                    aanvraag)</option>
+                            </select>
+                        </div>
+
+                        <!-- Rotterdam schakelaar (switch) -->
+                        <div class="formulier-groep rotterdam-schakelaar-groep">
+                            <div class="checkbox-wrapper-41">
+                                <input type="checkbox" id="rotterdam" checked>
+                            </div>
+                            <label for="rotterdam">Mogelijkheid om naar Rotterdam te komen</label>
+                        </div>
+
+                        <!-- Bijzonderheden -->
+                        <div class="formulier-groep">
+                            <label class="veld-label" for="bijzonderheden">Bijzonderheden / overige boodschap
+                                (optioneel)</label>
+                            <textarea id="bijzonderheden"
+                                placeholder="Typ hier eventuele vragen of opmerkingen..."></textarea>
+                        </div>
+
+                    </form>
+
+                    <!-- VOORBEELD / PREVIEW BOX MET KOPIEERKNOP -->
+                    <div class="voorbeeld-box">
+                        <div class="voorbeeld-kop">
+                            <span class="voorbeeld-titel">Voorbeeld e-mailbericht:</span>
+                            <button type="button" id="copyTextBtn" class="kopieer-knop">Kopieer tekst & stuur de mail
+                                zelf</button>
+                        </div>
+                        <div class="voorbeeld-tekst" id="mailPreview"></div>
+                    </div>
+
+                    <!-- VERSTUUR BUTTON (MAILTO) -->
+                    <a href="#" id="mailtoBtn" class="verstuur-knop uitgeschakeld">Verstuur e-mail</a>
+                    <p class="waarschuwing"><span class="letop">Let op!</span> Heb je geen mailprogramma geïnstalleerd
+                        kopieer dan de tekst met de handige knop hierboven en stuur de mail zelf naar
+                        <span class="letop">info@roelandlenoir.com</span>
+                    </p>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-opties">
+            <div class="logo-footer">
+                <img src="img/roeland lenoir site.png" alt="logo roeland lenoir">
+            </div>
+            <div class="allrightsreserved">
+                <p><span class="bold">© 2026 Roeland Lenoir. Alle rechten voorbehouden.</span><br>Alles op deze website
+                    is door mij gemaakt. Kopieer, deel of hergebruik geen van de inhoud, afbeeldingen of teksten zonder
+                    dit eerst aan mij te vragen.</p><br>
+                <a href="privacystatement.html">Privacyverklaring</a>
+            </div>
+            <div class="sociallinks">
+                <ul class="social-links">
+                    <li>
+                        <a href="https://instagram.com/roelandlenoir" target="_blank" aria-label="Instagram">
+                            <img src="img/instagram.svg" alt="instagram icoon" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="tel:+31623868395" aria-label="Bellen">
+                            <img src="img/bellen.svg" alt="telfoon icoon" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mailto:info@roelandlenoir.nl" aria-label="Mailen">
+                            <img src="img/mailen.svg" alt="mail icoon" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-opties">
-        <div class="logo-footer">
-            <img src="img/roeland lenoir site.png" alt="logo roeland lenoir">
-        </div>
-        <div class="allrightsreserved">
-            <p><span class="bold">© 2026 Roeland Lenoir. Alle rechten voorbehouden.</span><br>Alles op deze website is door mij gemaakt. Kopieer, deel of hergebruik geen van de inhoud, afbeeldingen of teksten zonder dit eerst aan mij te vragen.</p><br>
-            <a href="privacystatement.html">Privacyverklaring</a>
-        </div>
-        <div class="sociallinks">
-            <ul class="social-links">
-                <li>
-                    <a href="https://instagram.com/roelandlenoir" target="_blank" aria-label="Instagram">
-                        <img src="img/instagram.svg" alt="instagram icoon" />
-                    </a>
-                </li>
-                <li>
-                    <a href="tel:+31623868395" aria-label="Bellen">
-                        <img src="img/bellen.svg" alt="telfoon icoon" />
-                    </a>
-                </li>
-                <li>
-                    <a href="mailto:info@roelandlenoir.nl" aria-label="Mailen">
-                        <img src="img/mailen.svg" alt="mail icoon" />
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-  </footer>
-  <script src="script.js"></script>
+    </footer>
+    <script src="script.js"></script>
+    <script src="diensten.js"></script>
 </body>
+
 </html>

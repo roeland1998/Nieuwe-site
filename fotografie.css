@@ -21,20 +21,19 @@
 }
 
 .filter-btn {
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2rem;
     border: none;
-    border-radius: 12px;
-    background-color: var(--paars); /* Je paarse kleur */
+    border-radius: 30px;
+    background-color: var(--paars);
     color: var(--donkergroen);
     font-weight: 700;
-    text-transform: uppercase;
     cursor: pointer;
     transition: transform 0.3s ease-out;
 }
 
 .filter-btn.active {
     background-color: var(--lime);
-    transition: transform 0.05s ease-in; 
+    transition: transform 0.05s ease-in;
 }
 
 .gallery-item.is-hidden {
@@ -42,18 +41,18 @@
 }
 
 .gallery-grid {
-  column-count: 3;
-  gap: 0.7rem;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 0 0.7rem 0 0.7rem;
+    column-count: 3;
+    gap: 0.7rem;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0.7rem 0 0.7rem;
 }
 
 .grid {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
 }
 
 .cropfoto {
@@ -89,9 +88,9 @@
     }
 
     .filter-buttons {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    max-width: 500px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        max-width: 500px;
     }
 }

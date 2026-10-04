@@ -1,0 +1,421 @@
+.kaarten-sectie {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 1rem auto 1rem auto;
+    padding: 0 1rem 0 1rem;
+}
+
+.kaarten-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    width: 100%;
+    gap: 2rem;
+    box-sizing: border-box;
+    padding: 0 0.7rem 0 0.7rem;
+    align-items: start;
+}
+
+.kaart {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-radius: 12px;
+    color: var(--lichtrgroen);
+    padding: 20px;
+    justify-content: flex-start;
+}
+
+.kaart-afbeelding {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 0;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 0.7rem;
+    aspect-ratio: 6 / 7;
+    rotate: 2deg;
+    position: relative;
+    z-index: 1;
+}
+
+.kaart-afbeelding,
+.kaart-inhoud {
+    will-change: transform, width, height;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+}
+
+.links {
+    rotate: -1deg;
+}
+
+.kaart-afbeelding img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.kaart-inhoud {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 20px 35px 25px 35px;
+    margin: -90px 0 0 0;
+    background-color: var(--donkergroen);
+    border-radius: 15px;
+    position: relative;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+    z-index: 2;
+}
+
+.titel-en-prijs h3,
+.titel-en-prijs p {
+    margin: 25px 0 0 0;
+    line-height: 1.2;
+    color: var(--lichtgroen);
+}
+
+p.groepskorting {
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 1rem;
+}
+
+.titel-en-prijs {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.titel-en-prijs h3 {
+    font-size: 1.5rem;
+}
+
+.titel-en-prijs p {
+    font-size: 1.5rem;
+    color: var(--lime);
+    font-weight: 700;
+}
+
+li {
+    text-align: left;
+    margin-bottom: 0.3rem;
+}
+
+ul {
+    margin-left: -20px;
+}
+
+.inbegrepen {
+    text-align: left;
+    color: var(--lichtgroen);
+}
+
+/* ==========================================
+   POP-UP OVERLAY & VENSTER
+   ========================================== */
+
+/* De donkere achtergrond die over de hele pagina ligt */
+.popup-overlay {
+    display: none;
+    /* Standaard verborgen */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Wordt actief wanneer de pop-up opent */
+.popup-overlay.active {
+    display: flex;
+}
+
+/* Het witte venster/kaartje zelf */
+.popup-kaart {
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    background: var(--lichtgroen);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+/* Sluitknop (het kruisje) */
+.popup-sluitknop {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: transparent;
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--donkergroen);
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.popup-sluitknop:hover {
+    color: var(--donkergroen);
+    background-color: var(--lime);
+}
+
+.popup-titel {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--donkergroen);
+}
+
+.popup-subtitel {
+    font-size: 0.9rem;
+    color: var(--donkergroen);
+    margin-bottom: 24px;
+}
+
+
+/* ==========================================
+   FORMULIER ELEMENTEN
+   ========================================== */
+
+.formulier-groep {
+    margin-bottom: 18px;
+}
+
+.veld-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    color: var(--donkergroen);
+}
+
+.popup-kaart input[type="text"],
+.popup-kaart select,
+.popup-kaart textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--donkergroen);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+    background-color: var(--lichtgroen);
+    box-sizing: border-box;
+}
+
+.popup-kaart input[type="text"]:focus,
+.popup-kaart select:focus,
+.popup-kaart textarea:focus {
+    outline: none;
+    border-color: var(--lime);
+}
+
+.popup-kaart textarea {
+    resize: vertical;
+    min-height: 70px;
+}
+
+
+/* ==========================================
+   ROTTERDAM SCHAKELAAR (CUSTOM CHECKBOX)
+   ========================================== */
+
+.rotterdam-schakelaar-groep {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.rotterdam-schakelaar-groep label {
+    font-size: 0.93rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-wrapper-41 {
+    --size: 50px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    background-color: var(--lichtgroen);
+    border: 1px solid var(--donkergroen);
+    border-radius: 30px 100px 100px 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s;
+    display: block;
+    margin: 0;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 2);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.7);
+    border: 1px solid var(--donkergroen);
+    border-radius: 30px 100px 100px 100px;
+    background-color: var(--lime);
+    box-sizing: border-box;
+    transition: all 0.5s;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked {
+    background-color: var(--lime);
+    border-radius: 100px 100px 30px 100px;
+}
+
+.checkbox-wrapper-41 input[type="checkbox"]:checked::before {
+    left: 50%;
+    background-color: var(--donkergroen);
+    border-radius: 100px 100px 30px 100px;
+}
+
+
+/* ==========================================
+   VOORBEELD / PREVIEW BOX & KOPIEERKNOP
+   ========================================== */
+
+.voorbeeld-box {
+    background-color: var(--lichtgroen);
+    border-left: 4px solid var(--donkergroen);
+    padding: 12px 16px;
+    border-radius: 0 6px 6px 0;
+    margin-top: 20px;
+    font-size: 0.85rem;
+    color: var(--donkergroen);
+}
+
+.voorbeeld-kop {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.voorbeeld-titel {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.5px;
+    color: var(--donkergroen);
+}
+
+.kopieer-knop {
+    background: var(--lime);
+    border: none;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--donkergroen);
+    transition: background-color 0.2s ease;
+}
+
+.kopieer-knop:hover {
+    background: var(--paars);
+}
+
+.voorbeeld-tekst {
+    white-space: pre-wrap;
+    font-family: monospace;
+    line-height: 1.4;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+
+/* ==========================================
+   VERSTUUR KNOP (MAILTO)
+   ========================================== */
+
+.verstuur-knop {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--paars);
+    color: var(--donkergroen);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.verstuur-knop.uitgeschakeld {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.verstuur-knop:not(.uitgeschakeld):hover {
+    background-color: var(--lime);
+}
+
+/* ==========================================
+   Laatste waarschuwing
+   ========================================== */
+
+.waarschuwing {
+    font-size: 0.75rem;
+    color: var(--donkergroen);
+    margin-top: 12px;
+    text-align: center;
+}
+
+.letop {
+    font-weight: 700;
+}
+
+@media (max-width: 1370px) {
+    .kaarten-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 950px) {
+    .kaarten-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .kaart-inhoud {
+        padding: 20px 35px 25px 35px;
+        margin: -50px 0 0 0;
+    }
+
+    .kaart-afbeelding {
+        width: 100%;
+    }
+}

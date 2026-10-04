@@ -3,6 +3,13 @@
     --lichtgroen: #f5fff3;
     --paars: #f6d8f7;
     --lime: #d8e267;
+    scroll-behavior: smooth;
+    transition: all 0.3s ease-out;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 body {
@@ -23,6 +30,11 @@ header {
     display: block;
     margin: auto;
     max-width: 940px;
+}
+
+.ontdekken {
+    border: 2px solid var(--donkergroen);
+    background-color: transparent;
 }
 
 /* --- BASE NAVBAR STYLES --- */
@@ -53,7 +65,7 @@ nav {
     box-sizing: border-box;
 }
 
-.logo-link-block, 
+.logo-link-block,
 .logo-wrapper {
     display: flex;
     align-items: center;
@@ -135,7 +147,7 @@ nav {
     display: none;
 }
 
-h1{
+h1 {
     font-weight: 700;
     font-size: 3.75rem;
     line-height: 1.2;
@@ -198,7 +210,8 @@ footer {
     align-items: center;
     justify-content: center;
 }
-.logo-footer img{
+
+.logo-footer img {
     max-width: 14rem;
     height: auto;
 }
@@ -236,13 +249,39 @@ footer {
     align-items: center;
     gap: 0.7rem;
     margin: 8.75rem auto 0rem auto;
-    padding: 0 3.4375rem 0 3.4375rem;
+    padding: 0 3.4375rem 3.4375rem 3.4375rem;
     max-width: 900px;
 }
 
 .titel-en-par {
     display: block;
     margin: auto;
+}
+
+button {
+    display: flex;
+    flex-direction: row;
+    padding: 1rem 2.5rem;
+    font-weight: 600;
+    font-size: 1.2rem;
+    color: var(--donkergroen);
+    text-decoration: none;
+    background-color: var(--lime);
+    border-radius: 20rem;
+    transition: color 200ms;
+    border: none;
+    gap: 0.7rem;
+    align-items: center;
+    justify-content: center;
+}
+
+button:hover {
+    background-color: var(--paars);
+}
+
+button svg {
+    height: 1.4rem;
+    width: auto;
 }
 
 /* --- MEDIA QUERY: ONDER DE 1000PX --- */
@@ -311,11 +350,13 @@ footer {
         font-size: 0.9rem;
         line-height: 1.5;
     }
-    h1{
+
+    h1 {
         font-weight: 700;
         font-size: 2.75rem;
         line-height: 1.2;
     }
+
     p {
         font-weight: 400;
         font-size: 1.2rem;
