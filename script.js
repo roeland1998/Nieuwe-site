@@ -63,3 +63,10 @@ document.addEventListener('contextmenu', function (e) {
         e.preventDefault();
     }
 }, false);
+
+// Voorkom dat afbeeldingen gesleept kunnen worden
+document.addEventListener('dragstart', function (e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+}, false);
