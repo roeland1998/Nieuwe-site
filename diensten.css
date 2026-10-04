@@ -45,7 +45,6 @@
 
 .kaart-afbeelding,
 .kaart-inhoud {
-    will-change: transform, width, height;
     transform: translateZ(0);
     backface-visibility: hidden;
 }
