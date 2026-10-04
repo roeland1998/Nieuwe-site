@@ -76,7 +76,7 @@ Hierbij wil ik graag een aanvraag doen voor ${pakket}, ${rotterdamTekst}${bijzon
 
 Ik hoor graag van je.
 
-Met vriendelijke groet,
+Groetjes,
 ${voornaam || '[Je voornaam]'}`;
 
     return { voornaam, bodyText };
