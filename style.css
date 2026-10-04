@@ -52,6 +52,10 @@ header {
     background-color: transparent;
 }
 
+button.ontdekken:hover {
+    background-color: transparent;
+}
+
 /* --- BASE NAVBAR STYLES --- */
 .navbar-wrapper {
     display: flex;
