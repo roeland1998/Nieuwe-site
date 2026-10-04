@@ -7,6 +7,12 @@
     transition: all 0.3s ease-out;
 }
 
+section[id],
+div[id],
+h2[id] {
+    scroll-margin-top: 100px;
+}
+
 img {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -265,6 +271,12 @@ footer {
 .titel-en-par {
     display: block;
     margin: auto;
+}
+
+.titel-en-par a {
+    float: left;
+    margin-right: 0.7rem;
+    margin-bottom: 0.7rem;
 }
 
 button {

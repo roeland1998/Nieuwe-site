@@ -21,10 +21,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     border-radius: 12px;
     color: var(--lichtrgroen);
     padding: 20px;
+    margin: auto;
     justify-content: flex-start;
 }
 
@@ -41,6 +41,11 @@
     rotate: 2deg;
     position: relative;
     z-index: 1;
+    transition: transform 0.3s ease;
+}
+
+.kaart-afbeelding:hover {
+    transform: translateY(-25px);
 }
 
 .kaart-afbeelding,
@@ -63,7 +68,7 @@
 .kaart-inhoud {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: 1rem;
     padding: 20px 35px 25px 35px;
     margin: -90px 0 0 0;
@@ -72,6 +77,7 @@
     position: relative;
     box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
     z-index: 2;
+    min-width: 300px;
 }
 
 .titel-en-prijs h3,
@@ -79,6 +85,7 @@
     margin: 25px 0 0 0;
     line-height: 1.2;
     color: var(--lichtgroen);
+    text-align: left;
 }
 
 p.groepskorting {
@@ -89,8 +96,7 @@ p.groepskorting {
 
 .titel-en-prijs {
     display: flex;
-    gap: 1.5rem;
-    align-items: center;
+    gap: 0.7rem;
 }
 
 .titel-en-prijs h3 {
@@ -115,6 +121,10 @@ ul {
 .inbegrepen {
     text-align: left;
     color: var(--lichtgroen);
+}
+
+.kaart-knop {
+    left: 0;
 }
 
 /* ==========================================

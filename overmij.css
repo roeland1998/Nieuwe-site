@@ -1,0 +1,39 @@
+.over-mij {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    margin: auto;
+    gap: 2.5rem;
+    justify-items: center;
+}
+
+.foto-van-mij {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    object-fit: cover;
+    margin: auto;
+    aspect-ratio: 2/4;
+    rotate: 2deg;
+}
+
+.foto-in-frame {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 810px) {
+    .over-mij {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-van-mij {
+        aspect-ratio: 1/1;
+    }
+}

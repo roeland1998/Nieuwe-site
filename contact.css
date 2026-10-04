@@ -1,0 +1,92 @@
+.sociallinks-2 {
+    display: flex;
+    gap: 1.5rem;
+    align-items: start;
+}
+
+.social-links-contact {
+    display: flex;
+    align-items: flex-start;
+    gap: 4rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.social-links-contact a {
+    display: flex;
+    transition: opacity 0.2s;
+}
+
+.social-links-contact a:hover {
+    opacity: 0.7;
+}
+
+.social-links-contact img {
+    width: 2.5rem;
+    height: auto;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    margin: 8.75rem auto 0rem auto;
+    padding: 0 3.4375rem 3.4375rem 3.4375rem;
+    max-width: 900px;
+}
+
+.titel-en-paragraaf {
+    display: block;
+    margin: auto;
+}
+
+.titel-en-paragraaf a {
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact-mij {
+    display: grid;
+    grid-template-columns: 0.5fr 1fr;
+    margin: auto;
+    gap: 2.5rem;
+    justify-items: center;
+}
+
+.mailcontact {
+    font-weight: 700;
+}
+
+.contact-met-mij {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    border-radius: 15px;
+    object-fit: cover;
+    margin: auto;
+    aspect-ratio: 2/3.5;
+    rotate: -1deg;
+}
+
+.foto-in-frame {
+    width: 100%;
+    height: 100%;
+    object-position: center;
+    object-fit: cover;
+}
+
+
+
+@media (max-width: 810px) {
+    .over-mij {
+        grid-template-columns: 1fr;
+    }
+
+    .foto-van-mij {
+        aspect-ratio: 1/1;
+    }
+}
