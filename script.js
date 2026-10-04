@@ -57,3 +57,9 @@ filterButtons.forEach(button => {
 
 // Optioneel: Hussel de foto's ook direct bij het eerste laden van de pagina
 filterAndShuffle('all');
+
+document.addEventListener('contextmenu', function (e) {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+}, false);
