@@ -73,7 +73,7 @@
     pointer-events: none;
 }
 
-@media (hover: hover) {
+/*@media (hover: hover) {
     .kaart:hover .kaart-afbeelding {
         transform: translateY(-25px);
     }
@@ -81,7 +81,7 @@
     .kaart:hover .hoofd-foto {
         opacity: 0;
     }
-}
+}*/
 
 .kaart-inhoud {
     display: flex;
