@@ -3,8 +3,8 @@ const translations = {
         // Navigatie
         nav_diensten: "diensten",
         nav_overmij: "over mij",
-        nav_contact: "huur mij in",
-        nav_contact_mob: "huur mij in",
+        nav_contact: "contact of inhuren",
+        nav_contact_mob: "contact of inhuren",
 
         // Homepage
         home_titel: "Rotterdamse plaatjes- en praatjesmaker.",
@@ -86,7 +86,7 @@ const translations = {
         about_button: "Neem contact op",
 
         // Contact
-        contact_title: "Kom met mij in contact",
+        contact_title: "Kom met mij in contact / huur mij in",
         contact_text: "Wil je samenwerken? Mogelijkheden bespreken? Mijn schoenmaat weten? Kletsen over van alles en nog wat? Neem dan eenvoudig contact met mij op via onderstaande links. App of mail mij en volg mij natuurlijk ook even op de socials.",
         contact_email_label: "Email: ",
 
@@ -98,8 +98,8 @@ const translations = {
         // Navigatie
         nav_diensten: "services",
         nav_overmij: "about me",
-        nav_contact: "hire me",
-        nav_contact_mob: "hire me",
+        nav_contact: "contact or hire me",
+        nav_contact_mob: "contact or hire me",
 
         // Homepage
         home_titel: "Rotterdam-based photographer & storyteller.",

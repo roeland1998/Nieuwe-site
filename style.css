@@ -133,7 +133,7 @@ nav {
     background-color: var(--paars);
     border-radius: 20rem;
     transition: color 200ms;
-    min-width: 95px;
+    min-width: 150px;
     text-align: center;
 }
 
