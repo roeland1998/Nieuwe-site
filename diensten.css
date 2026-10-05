@@ -49,12 +49,6 @@
     transform: translateY(-25px);
 }
 
-.kaart-afbeelding,
-.kaart-inhoud {
-    transform: translateZ(0);
-    backface-visibility: hidden;
-}
-
 .links {
     rotate: -1deg;
 }
@@ -64,6 +58,22 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.hoofd-foto {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.kaart-afbeelding:hover .hoofd-foto {
+    opacity: 0;
 }
 
 .kaart-inhoud {
