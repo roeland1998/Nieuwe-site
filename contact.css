@@ -88,9 +88,6 @@
 
     .contact-met-mij {
         grid-row: 2;
-    }
-
-    .foto-van-mij {
         aspect-ratio: 1/1;
     }
 }
