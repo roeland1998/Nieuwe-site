@@ -141,6 +141,24 @@ nav {
     background-color: var(--lime);
 }
 
+.hamburger-menu,
+button.hamburger-menu {
+    background: transparent !important;
+    background-color: transparent !important;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.hamburger-menu:hover,
+.hamburger-menu:focus,
+.hamburger-menu:active {
+    background: transparent !important;
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
 /* --- MOBIELE ELEMENTEN VERBERGEN OP DESKTOP --- */
 .hamburger-menu {
     display: none;
