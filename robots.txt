@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /privacystatement
+
+Sitemap: https://www.roelandlenoir.com/sitemap.xml
