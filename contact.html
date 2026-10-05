@@ -63,16 +63,40 @@
                     <span></span>
                 </button>
 
-                <!-- Navigatiemenu -->
+                <!-- Navigatiemenu (Mobiel) -->
                 <section class="navbarmenu">
-                    <a class="navlink" href="diensten.html">diensten</a>
-                    <a class="navlink" href="overmij.html">over mij</a>
-                    <a class="link-block mobile-only-button" href="contact.html">huur mij in</a>
+                    <a class="navlink" href="diensten.html" data-i18n="nav_diensten"
+                        data-i18n="nav_diensten">diensten</a>
+                    <a class="navlink" href="overmij.html" data-i18n="nav_overmij">over mij</a>
+
+                    <!-- Taalschakelaar Mobiel -->
+                    <div class="taal-schakelaar-container mobile-taal">
+                        <span class="taal-label">NL</span>
+                        <div class="taal-schakelaar">
+                            <input type="checkbox" class="taal-toggle" id="taal-toggle-mobile"
+                                aria-label="Taal wisselen">
+                        </div>
+                        <span class="taal-label">EN</span>
+                    </div>
+
+                    <a class="link-block mobile-only-button" href="contact.html" data-i18n="nav_contact">huur mij
+                        in</a>
                 </section>
 
-                <!-- Desktop contactknop -->
+                <!-- Desktop Rechtergedeelte -->
                 <section class="button-wrapper desktop-only-button">
-                    <a class="link-block" href="contact.html">huur mij in</a>
+                    <!-- Taalschakelaar Desktop -->
+                    <div class="taal-schakelaar-container desktop-taal">
+                        <span class="taal-label">NL</span>
+                        <div class="taal-schakelaar">
+                            <input type="checkbox" class="taal-toggle" id="taal-toggle-desktop"
+                                aria-label="Taal wisselen">
+                        </div>
+                        <span class="taal-label">EN</span>
+                    </div>
+
+                    <a class="link-block" href="contact.html" data-i18n="nav_contact_mob">huur
+                        mij in</a>
                 </section>
             </nav>
         </section>
@@ -86,12 +110,16 @@
                 </div>
 
                 <div class="over-contact-met-mij">
-                    <h1>Kom met mij in contact</h1>
-                    <p>Wil je samenwerken? Mogelijkheden bespreken? Mijn schoenmaat weten? Kletsen over van alles en nog
-                        wat? Neem dan eenvoudig contact met mij op via onderstaande links. App of mail mij en volg mij
-                        natuurlijk ook even op de socials.
+                    <h1 data-i18n="contact_title">Kom met mij in contact</h1>
+                    <p>
+                        <span data-i18n="contact_text">
+                            Wil je samenwerken? Mogelijkheden bespreken? Mijn schoenmaat weten? Kletsen over van alles
+                            en nog wat? Neem dan eenvoudig contact met mij op via onderstaande links. App of mail mij en
+                            volg mij natuurlijk ook even op de socials.
+                        </span>
                         <br>
-                        Email: <a class="mailcontact" href="mailto:info@roelandlenoir.com">info@roelandlenoir.com</a>
+                        <span data-i18n="contact_email_label">Email: </span><a class="mailcontact"
+                            href="mailto:info@roelandlenoir.com">info@roelandlenoir.com</a>
                     </p><br>
                     <div class="sociallinks-2">
                         <ul class="social-links-contact">
@@ -123,10 +151,11 @@
                 <img src="img/roeland lenoir site.png" alt="logo roeland lenoir">
             </div>
             <div class="allrightsreserved">
-                <p><span class="bold">© 2026 Roeland Lenoir. Alle rechten voorbehouden.</span><br>Alles op deze website
+                <p data-i18n="footer_statement"><span class="bold">© 2026 Roeland Lenoir. Alle rechten
+                        voorbehouden.</span><br>Alles op deze website
                     is door mij gemaakt. Kopieer, deel of hergebruik geen van de inhoud, afbeeldingen of teksten zonder
                     dit eerst aan mij te vragen.</p><br>
-                <a href="privacystatement.html">Privacyverklaring</a>
+                <a href="privacystatement.html" data-i18n="footer_privacy">Privacyverklaring</a>
             </div>
             <div class="sociallinks">
                 <ul class="social-links">
@@ -150,6 +179,7 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="lang.js"></script>
 </body>
 
 </html>

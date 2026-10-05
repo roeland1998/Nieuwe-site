@@ -133,6 +133,8 @@ nav {
     background-color: var(--paars);
     border-radius: 20rem;
     transition: color 200ms;
+    min-width: 95px;
+    text-align: center;
 }
 
 .link-block:hover {
@@ -280,7 +282,7 @@ footer {
 .titel-en-par a {
     float: left;
     margin-right: 0.7rem;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0;
 }
 
 button {
@@ -307,6 +309,98 @@ button:hover {
 button svg {
     height: 1.4rem;
     width: auto;
+}
+
+/* Menu switch voor talen */
+
+/* --- TAALSCHAKELAAR BASE STYLING --- */
+.taal-schakelaar-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.taal-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--lichtgroen);
+    user-select: none;
+}
+
+/* De Toggle Knop (Voorheen checkbox-wrapper-41) */
+.taal-schakelaar {
+    --size: 35px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.taal-schakelaar input[type="checkbox"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: var(--size);
+    height: calc(var(--size) / 2);
+    background-color: var(--lichtgroen);
+    border: 1px solid var(--donkergroen);
+    border-radius: 30px 100px 100px 100px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    outline: none;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.5s ease;
+    display: block;
+    margin: 0;
+}
+
+.taal-schakelaar input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    width: calc(var(--size) / 2);
+    height: calc(var(--size) / 2);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%) scale(0.7);
+    border: 1px solid var(--donkergroen);
+    border-radius: 30px 100px 100px 100px;
+    background-color: var(--lime);
+    box-sizing: border-box;
+    transition: all 0.5s ease;
+}
+
+/* Status wanneer Engels gekozen is (Checked) */
+.taal-schakelaar input[type="checkbox"]:checked {
+    background-color: var(--lime);
+    border-radius: 100px 100px 30px 100px;
+}
+
+.taal-schakelaar input[type="checkbox"]:checked::before {
+    left: 50%;
+    background-color: var(--donkergroen);
+    border-radius: 100px 100px 30px 100px;
+}
+
+
+/* --- WEERGAVE OP MOBIEL EN DESKTOP --- */
+.desktop-only-button {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.navbarmenu .mobile-taal {
+    margin: 1rem 0;
+    justify-content: flex-start;
+}
+
+@media (max-width: 768px) {
+    .desktop-taal {
+        display: none;
+    }
+}
+
+@media (min-width: 769px) {
+    .mobile-taal {
+        display: none;
+    }
 }
 
 /* --- MEDIA QUERY: ONDER DE 1000PX --- */

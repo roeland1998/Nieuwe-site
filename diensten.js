@@ -1,6 +1,5 @@
 // Instellingen
 const ONTVANGER_EMAIL = "info@roelandlenoir.com";
-const EMAIL_ONDERWERP = "Aanvraag portretshoot";
 
 // Elementen ophalen uit de HTML
 const pakketButtons = document.querySelectorAll('.pakket-btn');
@@ -11,7 +10,6 @@ const copyTextBtn = document.getElementById('copyTextBtn');
 const voornaamInput = document.getElementById('voornaam');
 const pakketSelect = document.getElementById('pakket');
 const rotterdamCheckbox = document.getElementById('rotterdam');
-// Het label van de rotterdam-schakelaar ophalen:
 const rotterdamLabel = document.querySelector('label[for="rotterdam"]');
 const bijzonderhedenInput = document.getElementById('bijzonderheden');
 const mailtoBtn = document.getElementById('mailtoBtn');
@@ -43,48 +41,46 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// 2. MAIL INHOUD GENEREREN
+// 2. DYNAMISCHE DUBBELTALIGE MAIL INHOUD GENEREREN
 function generateMailContent() {
+    // Check de actieve taal (standaard 'nl')
+    const lang = document.documentElement.lang || 'nl';
+    const t = translations[lang] || translations['nl'];
+
     const voornaam = voornaamInput.value.trim();
     const pakket = pakketSelect.value;
     const naarRotterdam = rotterdamCheckbox.checked;
     const bijzonderheden = bijzonderhedenInput.value.trim();
 
-    // Tekst op het scherm bij de schakelaar én in de mail bijwerken
     let rotterdamTekst = "";
 
     if (naarRotterdam) {
-        // Tekst naast de knop als hij AANGEVINKT is:
         if (rotterdamLabel) {
-            rotterdamLabel.textContent = "Ik kom naar Rotterdam voor de foto's";
+            rotterdamLabel.textContent = t.rotterdam_label_ja;
         }
-        rotterdamTekst = "ik heb wel de mogelijkheid om naar Rotterdam te komen.";
+        rotterdamTekst = t.rotterdam_tekst_ja;
     } else {
-        // Tekst naast de knop als hij UITGEVINKT is:
         if (rotterdamLabel) {
-            rotterdamLabel.textContent = "Ik kom niet naar Rotterdam en betaal de OV kosten die Roeland maakt";
+            rotterdamLabel.textContent = t.rotterdam_label_nee;
         }
-        rotterdamTekst = "ik heb niet de mogelijkheid om naar Rotterdam te komen. Ik ben mij ervan bewust dat ik de reiskosten voor het OV moet vergoeden.";
+        rotterdamTekst = t.rotterdam_tekst_nee;
     }
 
     let bijzonderhedenTekst = bijzonderheden !== "" ? `\n\n${bijzonderheden}` : "";
+    const afzenderNaam = voornaam || t.mail_geen_naam;
 
-    const bodyText =
-        `Hi Roeland,
+    const bodyText = `${t.mail_aanhef}
 
-Hierbij wil ik graag een aanvraag doen voor ${pakket}, ${rotterdamTekst}${bijzonderhedenTekst}
+${t.mail_body_start} ${pakket}, ${rotterdamTekst}${bijzonderhedenTekst}
 
-Ik hoor graag van je.
+${t.mail_afsluiting}${afzenderNaam}`;
 
-Groetjes,
-${voornaam || '[Je voornaam]'}`;
-
-    return { voornaam, bodyText };
+    return { voornaam, bodyText, onderwerp: t.mail_onderwerp };
 }
 
 // 3. MAILTO LINK & PREVIEW BIJWERKEN
 function updateMailtoLink() {
-    const { voornaam, bodyText } = generateMailContent();
+    const { voornaam, bodyText, onderwerp } = generateMailContent();
 
     if (mailPreview) {
         mailPreview.textContent = bodyText;
@@ -92,7 +88,7 @@ function updateMailtoLink() {
 
     if (voornaam !== "") {
         mailtoBtn.classList.remove('uitgeschakeld');
-        const mailtoUrl = `mailto:${ONTVANGER_EMAIL}?subject=${encodeURIComponent(EMAIL_ONDERWERP)}&body=${encodeURIComponent(bodyText)}`;
+        const mailtoUrl = `mailto:${ONTVANGER_EMAIL}?subject=${encodeURIComponent(onderwerp)}&body=${encodeURIComponent(bodyText)}`;
         mailtoBtn.setAttribute('href', mailtoUrl);
     } else {
         mailtoBtn.classList.add('uitgeschakeld');
@@ -106,7 +102,9 @@ if (copyTextBtn) {
         const { bodyText } = generateMailContent();
         navigator.clipboard.writeText(bodyText).then(() => {
             const originalText = copyTextBtn.textContent;
-            copyTextBtn.textContent = "Gekopieerd!";
+            const lang = document.documentElement.lang || 'nl';
+
+            copyTextBtn.textContent = lang === 'en' ? "Copied!" : "Gekopieerd!";
             copyTextBtn.style.backgroundColor = "#c2f0c2";
 
             setTimeout(() => {

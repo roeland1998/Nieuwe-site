@@ -64,16 +64,40 @@
                     <span></span>
                 </button>
 
-                <!-- Navigatiemenu -->
+                <!-- Navigatiemenu (Mobiel) -->
                 <section class="navbarmenu">
-                    <a class="navlink" href="diensten.html">diensten</a>
-                    <a class="navlink" href="overmij.html">over mij</a>
-                    <a class="link-block mobile-only-button" href="contact.html">huur mij in</a>
+                    <a class="navlink" href="diensten.html" data-i18n="nav_diensten"
+                        data-i18n="nav_diensten">diensten</a>
+                    <a class="navlink" href="overmij.html" data-i18n="nav_overmij">over mij</a>
+
+                    <!-- Taalschakelaar Mobiel -->
+                    <div class="taal-schakelaar-container mobile-taal">
+                        <span class="taal-label">NL</span>
+                        <div class="taal-schakelaar">
+                            <input type="checkbox" class="taal-toggle" id="taal-toggle-mobile"
+                                aria-label="Taal wisselen">
+                        </div>
+                        <span class="taal-label">EN</span>
+                    </div>
+
+                    <a class="link-block mobile-only-button" href="contact.html" data-i18n="nav_contact">huur mij
+                        in</a>
                 </section>
 
-                <!-- Desktop contactknop -->
+                <!-- Desktop Rechtergedeelte -->
                 <section class="button-wrapper desktop-only-button">
-                    <a class="link-block" href="contact.html">huur mij in</a>
+                    <!-- Taalschakelaar Desktop -->
+                    <div class="taal-schakelaar-container desktop-taal">
+                        <span class="taal-label">NL</span>
+                        <div class="taal-schakelaar">
+                            <input type="checkbox" class="taal-toggle" id="taal-toggle-desktop"
+                                aria-label="Taal wisselen">
+                        </div>
+                        <span class="taal-label">EN</span>
+                    </div>
+
+                    <a class="link-block" href="contact.html" data-i18n="nav_contact_mob">huur
+                        mij in</a>
                 </section>
             </nav>
         </section>
@@ -83,22 +107,23 @@
         <section class="foto-section">
             <div class="over-mij">
                 <div class="tekst-over-mij">
-                    <h1>Over mij</h1>
-                    <p>Hi, mijn naam is Roeland. Een fotograaf van 28 jaar die in het centrum van Rotterdam woont. Door
-                        vrienden en familie word ik omschreven als "super
-                        creatief en sociaal". Die kanten van mijzelf combineer ik in mijn werk als fotograaf.
-                        Tijdens fotoshoots zet ik alles op alles om te zorgen voor een fijne en prettige sfeer, ik
-                        luister naar jouw wensen, denk met je mee en we maken er een fijne sessie van. <br>
-                        <br>
+                    <h1 data-i18n="about_title">Over mij</h1>
+                    <p data-i18n="about_p1">
+                        Hi, mijn naam is Roeland. Een fotograaf van 28 jaar die in het centrum van Rotterdam woont. Door
+                        vrienden en familie word ik omschreven als "super creatief en sociaal". Die kanten van mijzelf
+                        combineer ik in mijn werk als fotograaf. Tijdens fotoshoots zet ik alles op alles om te zorgen
+                        voor een fijne en prettige sfeer, ik luister naar jouw wensen, denk met je mee en we maken er
+                        een fijne sessie van.
+                    </p>
+                    <p data-i18n="about_p2">
                         Ik snap heel goed dat het best spannend en kwetsbaar kan zijn om je te laten portretteren door
                         iemand die je niet kent, als fotograaf sta ik zelf ook veel comfortabeler achter de camera dan
                         ervoor. Maar samen maken we er een relaxt moment van, ik wil je van harte aanmoedigen om, als je
-                        vragen hebt of iets over mij wilt
-                        weten, contact met mij op te nemen. Dat kan door mij te mailen of door een
-                        whatsapp berichtje te sturen.
+                        vragen hebt of iets over mij wilt weten, contact met mij op te nemen. Dat kan door mij te mailen
+                        of door een whatsapp berichtje te sturen.
                     </p>
                     <section class="button-wrapper">
-                        <a class="link-block" href="contact.html">Neem contact op</a>
+                        <a class="link-block" href="contact.html" data-i18n="about_button">Neem contact op</a>
                     </section>
                 </div>
                 <div class="foto-van-mij">
@@ -115,10 +140,11 @@
                 <img src="img/roeland lenoir site.png" alt="logo roeland lenoir">
             </div>
             <div class="allrightsreserved">
-                <p><span class="bold">© 2026 Roeland Lenoir. Alle rechten voorbehouden.</span><br>Alles op deze website
+                <p data-i18n="footer_statement"><span class="bold">© 2026 Roeland Lenoir. Alle rechten
+                        voorbehouden.</span><br>Alles op deze website
                     is door mij gemaakt. Kopieer, deel of hergebruik geen van de inhoud, afbeeldingen of teksten zonder
                     dit eerst aan mij te vragen.</p><br>
-                <a href="privacystatement.html">Privacyverklaring</a>
+                <a href="privacystatement.html" data-i18n="footer_privacy">Privacyverklaring</a>
             </div>
             <div class="sociallinks">
                 <ul class="social-links">
@@ -142,6 +168,7 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="lang.js"></script>
 </body>
 
 </html>

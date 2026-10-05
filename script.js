@@ -23,17 +23,17 @@ function shuffleArray(array) {
 
 // Functie om de foto's te husselen en te filteren
 function filterAndShuffle(selectedCategory) {
+    // VOORKOM CRASH: Draai dit alleen als er daadwerkelijk een grid op de pagina staat
+    if (!gridContainer) return;
+
     // 1. Hussel de lijst met gallery-items willekeurig
     const shuffledItems = shuffleArray([...galleryItems]);
 
-    // 2. Voeg de gehusselde items opnieuw toe aan de DOM (verandert de volgorde)
+    // 2. Voeg de gehusselde items opnieuw toe aan de DOM
     shuffledItems.forEach(item => {
         gridContainer.appendChild(item);
 
         const itemCategories = item.getAttribute('data-category') || '';
-
-        // 3. Toon of verberg items op basis van de gekozen categorie
-        // (.split(/\s+/) zorgt dat 'portet' of 'portret' netjes op losse woorden wordt gematcht)
         const categoriesArray = itemCategories.split(/\s+/);
 
         if (selectedCategory === 'all' || categoriesArray.includes(selectedCategory)) {
@@ -44,29 +44,18 @@ function filterAndShuffle(selectedCategory) {
     });
 }
 
-// Event listeners toevoegen aan de filterknoppen
-filterButtons.forEach(button => {
-    button.addEventListener('click', () => {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
+// Event listeners toevoegen aan de filterknoppen (alleen als ze op de pagina staan)
+if (filterButtons.length > 0) {
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
 
-        const selectedCategory = button.getAttribute('data-filter');
-        filterAndShuffle(selectedCategory);
+            const selectedCategory = button.getAttribute('data-filter');
+            filterAndShuffle(selectedCategory);
+        });
     });
-});
 
-// Optioneel: Hussel de foto's ook direct bij het eerste laden van de pagina
-filterAndShuffle('all');
-
-document.addEventListener('contextmenu', function (e) {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-    }
-}, false);
-
-// Voorkom dat afbeeldingen gesleept kunnen worden
-document.addEventListener('dragstart', function (e) {
-    if (e.target.tagName === 'IMG') {
-        e.preventDefault();
-    }
-}, false);
+    // Hussel bij het laden alleen als er een galerij is
+    filterAndShuffle('all');
+}
