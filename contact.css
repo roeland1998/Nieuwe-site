@@ -87,7 +87,7 @@
     }
 
     .contact-met-mij {
-        grid-column: 2;
+        grid-row: 2;
     }
 
     .foto-van-mij {
