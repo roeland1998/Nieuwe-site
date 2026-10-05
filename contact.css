@@ -82,8 +82,12 @@
 
 
 @media (max-width: 810px) {
-    .over-mij {
+    .contact-mij {
         grid-template-columns: 1fr;
+    }
+
+    .contact-met-mij {
+        grid-column: 2;
     }
 
     .foto-van-mij {
