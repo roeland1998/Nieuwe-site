@@ -2,7 +2,6 @@
 const ONTVANGER_EMAIL = "info@roelandlenoir.com";
 
 // Elementen ophalen uit de HTML
-const pakketButtons = document.querySelectorAll('.pakket-btn');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const emailModal = document.getElementById('emailModal');
 const copyTextBtn = document.getElementById('copyTextBtn');
@@ -15,18 +14,24 @@ const bijzonderhedenInput = document.getElementById('bijzonderheden');
 const mailtoBtn = document.getElementById('mailtoBtn');
 const mailPreview = document.getElementById('mailPreview');
 
-// 1. POP-UP OPENEN EN SLUITEN LOGICA
-pakketButtons.forEach(button => {
-    button.addEventListener('click', () => {
+// 1. POP-UP OPENEN EN SLUITEN LOGICA (Event Delegation voor de pakketknoppen)
+document.addEventListener('click', (e) => {
+    // Zoek naar de dichtstbijzijnde knop met de class .pakket-btn (ongeacht of er op de span, svg of button is geklikt)
+    const button = e.target.closest('.pakket-btn');
+
+    if (button) {
+        e.preventDefault();
         const gekozenPakket = button.getAttribute('data-pakket');
 
-        if (gekozenPakket) {
+        if (gekozenPakket && pakketSelect) {
             pakketSelect.value = gekozenPakket;
         }
 
         updateMailtoLink();
-        emailModal.classList.add('active');
-    });
+        if (emailModal) {
+            emailModal.classList.add('active');
+        }
+    }
 });
 
 if (closeModalBtn) {
@@ -116,10 +121,10 @@ if (copyTextBtn) {
 }
 
 // Luisteren naar veranderingen in het formulier
-voornaamInput.addEventListener('input', updateMailtoLink);
-pakketSelect.addEventListener('change', updateMailtoLink);
-rotterdamCheckbox.addEventListener('change', updateMailtoLink);
-bijzonderhedenInput.addEventListener('input', updateMailtoLink);
+if (voornaamInput) voornaamInput.addEventListener('input', updateMailtoLink);
+if (pakketSelect) pakketSelect.addEventListener('change', updateMailtoLink);
+if (rotterdamCheckbox) rotterdamCheckbox.addEventListener('change', updateMailtoLink);
+if (bijzonderhedenInput) bijzonderhedenInput.addEventListener('input', updateMailtoLink);
 
 // Direct initialiseren
 updateMailtoLink();
