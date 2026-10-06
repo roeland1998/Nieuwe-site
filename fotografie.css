@@ -6,6 +6,12 @@
     justify-items: center;
 }
 
+h2 {
+    font-weight: 400;
+    font-size: 1.75rem;
+    line-height: 1.2;
+}
+
 .homegrid {
     display: flex;
     align-items: center;

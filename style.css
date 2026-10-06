@@ -189,7 +189,8 @@ button.hamburger-menu {
 h1 {
     font-weight: 700;
     font-size: 3.75rem;
-    line-height: 1.2;
+    line-height: 1;
+    margin-bottom: -15px;
 }
 
 p {
