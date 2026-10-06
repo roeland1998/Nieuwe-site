@@ -142,9 +142,9 @@ ul {
     color: var(--lichtgroen);
 }
 
-.kaart-knop * {
+.kaart-knop {
     left: 0;
-    pointer-events: none;
+    z-index: 8;
 }
 
 /* ==========================================
