@@ -7,7 +7,8 @@ const translations = {
         nav_contact_mob: "contact or hire me",
 
         // Homepage
-        home_titel: "Rotterdam-based photographer & storyteller.",
+        home_titel: "Visual storyteller.",
+        home_subtitel: "Offering you a refreshing look.\n On yourself. On world around you",
         home_intro: "Hi, my name is Roeland. I graduated as a photographer from the Utecht Academy of the Arts in 2020, and when people describe my style, they always mention a distinct atmosphere. I hope you enjoy my warm and curious view of the world around me, and who knows, maybe we might be able to work together in the near future. Feel free to get in touch if you have any questions.",
         home_knop: "discover more",
 
