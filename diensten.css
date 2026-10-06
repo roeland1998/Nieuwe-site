@@ -74,11 +74,11 @@
 }
 
 @media (hover: hover) {
-    .kaart-afbeelding {
+    .kaart:hover .kaart-afbeelding {
         transform: translateY(-25px);
     }
 
-    .hoofd-foto {
+    .kaart:hover .hoofd-foto {
         opacity: 0;
     }
 }
