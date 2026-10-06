@@ -2,7 +2,6 @@
 const ONTVANGER_EMAIL = "info@roelandlenoir.com";
 
 // Elementen ophalen uit de HTML
-const pakketButtons = document.querySelectorAll('.pakket-btn');
 const closeModalBtn = document.getElementById('closeModalBtn');
 const emailModal = document.getElementById('emailModal');
 const copyTextBtn = document.getElementById('copyTextBtn');
@@ -15,23 +14,29 @@ const bijzonderhedenInput = document.getElementById('bijzonderheden');
 const mailtoBtn = document.getElementById('mailtoBtn');
 const mailPreview = document.getElementById('mailPreview');
 
-// 1. POP-UP OPENEN EN SLUITEN LOGICA
-pakketButtons.forEach(button => {
-    button.addEventListener('click', () => {
+// 1. POP-UP OPENEN EN SLUITEN LOGICA (Event Delegation)
+document.addEventListener('click', (e) => {
+    // Zoek naar de dichtstbijzijnde knop met class .pakket-btn
+    const button = e.target.closest('.pakket-btn');
+
+    if (button) {
+        e.preventDefault();
         const gekozenPakket = button.getAttribute('data-pakket');
 
-        if (gekozenPakket) {
+        if (gekozenPakket && pakketSelect) {
             pakketSelect.value = gekozenPakket;
         }
 
         updateMailtoLink();
-        emailModal.classList.add('active');
-    });
+        if (emailModal) {
+            emailModal.classList.add('active');
+        }
+    }
 });
 
 if (closeModalBtn) {
     closeModalBtn.addEventListener('click', () => {
-        emailModal.classList.remove('active');
+        if (emailModal) emailModal.classList.remove('active');
     });
 }
 
@@ -41,41 +46,52 @@ window.addEventListener('click', (e) => {
     }
 });
 
-// 2. DYNAMISCHE DUBBELTALIGE MAIL INHOUD GENEREREN
+// 2. DYNAMISCHE DUBBELTALIGE MAIL INHOUD GENEREREN (met Fallbacks tegen crashes)
 function generateMailContent() {
     // Check de actieve taal (standaard 'nl')
     const lang = document.documentElement.lang || 'nl';
-    const t = translations[lang] || translations['nl'];
 
-    const voornaam = voornaamInput.value.trim();
-    const pakket = pakketSelect.value;
-    const naarRotterdam = rotterdamCheckbox.checked;
-    const bijzonderheden = bijzonderhedenInput.value.trim();
+    // Zorg voor een fallback als 'translations' nog niet geladen is of de sleutel ontbreekt
+    const translationsObj = (typeof translations !== 'undefined') ? translations : {};
+    const t = translationsObj[lang] || translationsObj['nl'] || {};
+
+    const voornaam = voornaamInput ? voornaamInput.value.trim() : "";
+    const pakket = pakketSelect ? pakketSelect.value : "";
+    const naarRotterdam = rotterdamCheckbox ? rotterdamCheckbox.checked : false;
+    const bijzonderheden = bijzonderhedenInput ? bijzonderhedenInput.value.trim() : "";
+
+    // Fallback teksten voor als de vertaalvariabelen niet beschikbaar zijn
+    const rotterdam_label_ja = t.rotterdam_label_ja || "Mogelijkheid om naar Rotterdam te komen";
+    const rotterdam_label_nee = t.rotterdam_label_nee || "Kan niet naar Rotterdam komen";
+    const rotterdam_tekst_ja = t.rotterdam_tekst_ja || "ik kan naar Rotterdam komen voor de shoot.";
+    const rotterdam_tekst_nee = t.rotterdam_tekst_nee || "ik kan niet naar Rotterdam komen, laten we overleggen over de locatie.";
+
+    const mail_aanhef = t.mail_aanhef || "Hoi Roeland,";
+    const mail_body_start = t.mail_body_start || "Ik wil graag een fotoshoot boeken voor het pakket:";
+    const mail_afsluiting = t.mail_afsluiting || "Met vriendelijke groet,\n";
+    const mail_geen_naam = t.mail_geen_naam || "[Je naam]";
+    const mail_onderwerp = t.mail_onderwerp || "Aanvraag fotoshoot via website";
 
     let rotterdamTekst = "";
 
     if (naarRotterdam) {
-        if (rotterdamLabel) {
-            rotterdamLabel.textContent = t.rotterdam_label_ja;
-        }
-        rotterdamTekst = t.rotterdam_tekst_ja;
+        if (rotterdamLabel) rotterdamLabel.textContent = rotterdam_label_ja;
+        rotterdamTekst = rotterdam_tekst_ja;
     } else {
-        if (rotterdamLabel) {
-            rotterdamLabel.textContent = t.rotterdam_label_nee;
-        }
-        rotterdamTekst = t.rotterdam_tekst_nee;
+        if (rotterdamLabel) rotterdamLabel.textContent = rotterdam_label_nee;
+        rotterdamTekst = rotterdam_tekst_nee;
     }
 
     let bijzonderhedenTekst = bijzonderheden !== "" ? `\n\n${bijzonderheden}` : "";
-    const afzenderNaam = voornaam || t.mail_geen_naam;
+    const afzenderNaam = voornaam || mail_geen_naam;
 
-    const bodyText = `${t.mail_aanhef}
+    const bodyText = `${mail_aanhef}
 
-${t.mail_body_start} ${pakket}, ${rotterdamTekst}${bijzonderhedenTekst}
+${mail_body_start} ${pakket}, ${rotterdamTekst}${bijzonderhedenTekst}
 
-${t.mail_afsluiting}${afzenderNaam}`;
+${mail_afsluiting}${afzenderNaam}`;
 
-    return { voornaam, bodyText, onderwerp: t.mail_onderwerp };
+    return { voornaam, bodyText, onderwerp: mail_onderwerp };
 }
 
 // 3. MAILTO LINK & PREVIEW BIJWERKEN
@@ -86,13 +102,15 @@ function updateMailtoLink() {
         mailPreview.textContent = bodyText;
     }
 
-    if (voornaam !== "") {
-        mailtoBtn.classList.remove('uitgeschakeld');
-        const mailtoUrl = `mailto:${ONTVANGER_EMAIL}?subject=${encodeURIComponent(onderwerp)}&body=${encodeURIComponent(bodyText)}`;
-        mailtoBtn.setAttribute('href', mailtoUrl);
-    } else {
-        mailtoBtn.classList.add('uitgeschakeld');
-        mailtoBtn.setAttribute('href', '#');
+    if (mailtoBtn) {
+        if (voornaam !== "") {
+            mailtoBtn.classList.remove('uitgeschakeld');
+            const mailtoUrl = `mailto:${ONTVANGER_EMAIL}?subject=${encodeURIComponent(onderwerp)}&body=${encodeURIComponent(bodyText)}`;
+            mailtoBtn.setAttribute('href', mailtoUrl);
+        } else {
+            mailtoBtn.classList.add('uitgeschakeld');
+            mailtoBtn.setAttribute('href', '#');
+        }
     }
 }
 
@@ -116,10 +134,10 @@ if (copyTextBtn) {
 }
 
 // Luisteren naar veranderingen in het formulier
-voornaamInput.addEventListener('input', updateMailtoLink);
-pakketSelect.addEventListener('change', updateMailtoLink);
-rotterdamCheckbox.addEventListener('change', updateMailtoLink);
-bijzonderhedenInput.addEventListener('input', updateMailtoLink);
+if (voornaamInput) voornaamInput.addEventListener('input', updateMailtoLink);
+if (pakketSelect) pakketSelect.addEventListener('change', updateMailtoLink);
+if (rotterdamCheckbox) rotterdamCheckbox.addEventListener('change', updateMailtoLink);
+if (bijzonderhedenInput) bijzonderhedenInput.addEventListener('input', updateMailtoLink);
 
 // Direct initialiseren
 updateMailtoLink();
