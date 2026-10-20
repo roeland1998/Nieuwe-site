@@ -10,5 +10,12 @@
                 }
             ]
         }
+    ],
+    "redirects": [
+        {
+            "source": "/poetry",
+            "destination": "/",
+            "permanent": true
+        }
     ]
 }
