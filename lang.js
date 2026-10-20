@@ -92,7 +92,12 @@ const translations = {
 
         // Footer
         footer_statement: "© 2026 Roeland Lenoir. All rights reserved. Everything on this website was created by me. Do not copy, share, or reuse any content, images, or text without asking my permission first.",
-        footer_privacy: "Privacy statement"
+        footer_privacy: "Privacy statement",
+
+        //404
+        "404_title": "404",
+        "404_subtitle": "I have looked everywhere for you but I really couldn't find this page. \n\n This page doesn't exist, has been moved, or was never written. But don't worry, the button below will take you back to the homepage.",
+        "404_button": "back to homepage"
     }
 };
 
