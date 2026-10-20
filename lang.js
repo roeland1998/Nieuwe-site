@@ -16,7 +16,7 @@ const translations = {
         home_filter_alles: "all photography",
         home_filter_portret: "portraits",
         home_filter_product: "products / fashion",
-        home_filter_stilleven_sfeer: "still life and art",
+        home_filter_stilleven_sfeer: "documentary",
 
         // Diensten - Hero
         hero_title: "Get a professional portrait photo with character and atmosphere.",
