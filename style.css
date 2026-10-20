@@ -491,14 +491,14 @@ button svg {
 
     h1 {
         font-weight: 700;
-        font-size: 2.75rem;
-        line-height: 1.2;
+        font-size: 2.5rem;
+        line-height: 1;
     }
 
     p {
         font-weight: 400;
-        font-size: 1.2rem;
-        line-height: 1.7;
+        font-size: 1rem;
+        line-height: 1.5;
     }
 
     footer {
