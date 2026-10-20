@@ -138,7 +138,8 @@ h2 {
         max-width: 500px;
 
         .filter-btn {
-            font-size: 1rem;
+            font-size: 0.9rem;
+            padding: 0.9rem 1.9rem;
         }
     }
 }
