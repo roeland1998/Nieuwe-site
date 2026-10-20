@@ -50,7 +50,7 @@ h2 {
     justify-content: center;
     gap: 2rem;
     padding: 2rem;
-    max-width: 900px;
+    max-width: 1200px;
     flex-wrap: wrap;
 }
 
@@ -136,5 +136,9 @@ h2 {
         align-items: center;
         gap: 1rem;
         max-width: 500px;
+
+        .filter-btn {
+            font-size: 1rem;
+        }
     }
 }

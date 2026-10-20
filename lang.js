@@ -15,7 +15,7 @@ const translations = {
         // Filters Home
         home_filter_alles: "all photography",
         home_filter_portret: "portraits",
-        home_filter_product: "products",
+        home_filter_product: "products / fashion",
         home_filter_stilleven_sfeer: "still life and art",
 
         // Diensten - Hero
