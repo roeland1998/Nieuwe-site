@@ -1,16 +1,14 @@
-// Rechtermuisknop (opslaan) en slepen blokkeren op alle afbeeldingen
-document.addEventListener('DOMContentLoaded', () => {
-    // Blokkeer rechtermuisknop op afbeeldingen
-    document.addEventListener('contextmenu', (e) => {
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
+// Rechtermuisknop en slepen blokkeren op alle gallery-items en foto's
+document.addEventListener('contextmenu', (e) => {
+    if (e.target.classList.contains('fotoingrid') || e.target.closest('.gallery-item') || e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+    }
+}, true);
 
-    // Extra beveiliging tegen drag & drop op afbeeldingen
-    document.addEventListener('dragstart', (e) => {
-        if (e.target.tagName === 'IMG') {
-            e.preventDefault();
-        }
-    });
-});
+document.addEventListener('dragstart', (e) => {
+    if (e.target.classList.contains('fotoingrid') || e.target.closest('.gallery-item') || e.target.tagName === 'IMG') {
+        e.preventDefault();
+        return false;
+    }
+}, true);
