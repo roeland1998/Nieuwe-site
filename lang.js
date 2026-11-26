@@ -95,7 +95,7 @@ const translations = {
         label_email: "E-mailadress:*",
         label_bericht: "My question is...",
         placeholder_bericht_contact: "Type your question or message here...",
-        placeholder_email_contact: "your.email@adres.com",
+        placeholder_email_contact: "your.email@adress.com",
         placeholder_naam_contact: "Name",
 
         // Footer
