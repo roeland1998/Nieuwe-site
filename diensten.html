@@ -394,11 +394,11 @@
             </div>
         </section>
 
-        <section class="popup-sectie">
+ <section class="popup-sectie">
             <!-- De verduisterde achtergrond / overlay -->
             <div id="emailModal" class="popup-overlay">
 
-                <!-- De witte kaart / venster van de pop-up -->
+                <!-- De kaart / venster van de pop-up -->
                 <div class="popup-kaart">
 
                     <!-- Sluitknop (kruisje) -->
@@ -407,16 +407,24 @@
 
                     <!-- TITEL EN SUBTITEL -->
                     <h2 class="popup-titel" data-i18n="modal_title">Aanvraag sturen</h2>
-                    <p class="popup-subtitel" data-i18n="modal_subtitle">Vul je gegevens in om de e-mail op te stellen.
+                    <p class="popup-subtitel" data-i18n="modal_subtitle">Vul je gegevens in en ik neem snel contact met
+                        je op.
                     </p>
 
-                    <form id="emailForm" onsubmit="return false;">
+                    <form id="emailForm">
 
                         <!-- Voornaam -->
                         <div class="formulier-groep">
                             <label class="veld-label" for="voornaam" data-i18n="label_voornaam">Voornaam *</label>
                             <input type="text" id="voornaam" data-i18n-placeholder="placeholder_voornaam"
                                 placeholder="Typ je voornaam..." required>
+                        </div>
+
+                        <!-- E-mailadres -->
+                        <div class="formulier-groep">
+                            <label class="veld-label" for="email" data-i18n="label_email">E-mailadres *</label>
+                            <input type="email" id="email" data-i18n-placeholder="placeholder_email"
+                                placeholder="Typ je e-mailadres..." required>
                         </div>
 
                         <!-- Pakketkeuze in de pop-up -->
@@ -448,27 +456,17 @@
                                 placeholder="Typ hier eventuele vragen of opmerkingen..."></textarea>
                         </div>
 
+                        <!-- Onzichtbaar anti-spam veld (honeypot) -->
+                        <input type="text" id="website_url" style="display:none;" tabindex="-1" autocomplete="off">
+
+                        <!-- VERSTUUR KNOP -->
+                        <button type="submit" id="submitBtn" class="verstuur-knop" data-i18n="send_btn">Verstuur
+                            aanvraag</button>
+
+                        <!-- Feedbackmelding na verzenden -->
+                        <p id="formStatus" class="form-status" aria-live="polite"></p>
+
                     </form>
-
-                    <!-- VOORBEELD / PREVIEW BOX MET KOPIEERKNOP -->
-                    <div class="voorbeeld-box">
-                        <div class="voorbeeld-kop">
-                            <span class="voorbeeld-titel" data-i18n="preview_title">Voorbeeld e-mailbericht:</span>
-                            <button type="button" id="copyTextBtn" class="kopieer-knop" data-i18n="copy_btn">Kopieer
-                                tekst & stuur de mail zelf</button>
-                        </div>
-                        <div class="voorbeeld-tekst" id="mailPreview"></div>
-                    </div>
-
-                    <!-- VERSTUUR BUTTON (MAILTO) -->
-                    <a href="#" id="mailtoBtn" class="verstuur-knop uitgeschakeld" data-i18n="send_btn">Verstuur
-                        e-mail</a>
-                    <p class="waarschuwing">
-                        <span class="letop" data-i18n="notice_label">Let op!</span>
-                        <span data-i18n="notice_text">Heb je geen mailprogramma geïnstalleerd kopieer dan de tekst met
-                            de handige knop hierboven en stuur de mail zelf naar </span>
-                        <span class="letop">info@roelandlenoir.com</span>
-                    </p>
 
                 </div>
             </div>
