@@ -145,8 +145,38 @@
                             volg mij natuurlijk ook even op de socials.
                         </span>
                         <br>
-                        <span data-i18n="contact_email_label">Email: </span><a class="mailcontact"
-                            href="mailto:info@roelandlenoir.com">info@roelandlenoir.com</a>
+                        <section class="contact-formulier-sectie">
+    <div class="contact-formulier-kaart">
+        <h2 class="contact-titel" data-i18n="contact_form_title">Stuur een bericht</h2>
+        <p class="contact-subtitel" data-i18n="contact_form_subtitle">Heb je een vraag, idee of wil je even sparren? Laat hieronder een bericht achter.</p>
+
+        <form id="contactForm">
+            <div class="formulier-groep">
+                <label class="veld-label" for="naam" data-i18n="label_naam">Naam *</label>
+                <input type="text" name="naam" placeholder="Naam" id="naam" required>
+            </div>
+
+            <div class="formulier-groep">
+                <label class="veld-label" for="email" data-i18n="label_email">Email *</label>
+                <input type="email" name="email" placeholder="Jouw.email@adres.nl" id="email" required>
+            </div>
+
+            <div class="formulier-groep">
+                <label class="veld-label" for="bericht" data-i18n="label_bericht">Mijn vraag:</label>
+                <textarea cols="30" rows="4" name="bericht" id="bericht" placeholder="Typ hier je vraag of bericht..."></textarea>
+            </div>
+
+            <!-- Onzichtbaar anti-spam veld (honeypot) -->
+            <input type="text" id="website_url" style="display:none;" tabindex="-1" autocomplete="off">
+
+            <button type="submit" id="contactSubmitBtn" class="verstuur-knop" data-i18n="contact_send_btn">
+                Verstuur bericht
+            </button>
+
+            <p id="contactFormStatus" class="form-status" aria-live="polite"></p>
+        </form>
+    </div>
+</section>
                     </p><br>
                     <div class="sociallinks-2">
                         <ul class="social-links-contact">
