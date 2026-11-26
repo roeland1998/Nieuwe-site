@@ -173,7 +173,7 @@ ul {
     display: flex;
 }
 
-/* Het witte venster/kaartje zelf */
+/* Het venster/kaartje zelf */
 .popup-kaart {
     position: relative;
     max-height: 90vh;
@@ -237,6 +237,7 @@ ul {
 }
 
 .popup-kaart input[type="text"],
+.popup-kaart input[type="email"],
 .popup-kaart select,
 .popup-kaart textarea {
     width: 100%;
@@ -250,6 +251,7 @@ ul {
 }
 
 .popup-kaart input[type="text"]:focus,
+.popup-kaart input[type="email"]:focus,
 .popup-kaart select:focus,
 .popup-kaart textarea:focus {
     outline: none;
@@ -329,61 +331,7 @@ ul {
 
 
 /* ==========================================
-   VOORBEELD / PREVIEW BOX & KOPIEERKNOP
-   ========================================== */
-
-.voorbeeld-box {
-    background-color: var(--lichtgroen);
-    border-left: 4px solid var(--donkergroen);
-    padding: 12px 16px;
-    border-radius: 0 6px 6px 0;
-    margin-top: 20px;
-    font-size: 0.85rem;
-    color: var(--donkergroen);
-}
-
-.voorbeeld-kop {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 8px;
-}
-
-.voorbeeld-titel {
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 0.75rem;
-    letter-spacing: 0.5px;
-    color: var(--donkergroen);
-}
-
-.kopieer-knop {
-    background: var(--lime);
-    border: none;
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    border-radius: 4px;
-    cursor: pointer;
-    font-weight: 600;
-    color: var(--donkergroen);
-    transition: background-color 0.2s ease;
-}
-
-.kopieer-knop:hover {
-    background: var(--paars);
-}
-
-.voorbeeld-tekst {
-    white-space: pre-wrap;
-    font-family: monospace;
-    line-height: 1.4;
-    max-height: 150px;
-    overflow-y: auto;
-}
-
-
-/* ==========================================
-   VERSTUUR KNOP (MAILTO)
+   VERSTUUR KNOP & STATUSMELDING
    ========================================== */
 
 .verstuur-knop {
@@ -392,6 +340,8 @@ ul {
     padding: 14px;
     background-color: var(--paars);
     color: var(--donkergroen);
+    border: none;
+    cursor: pointer;
     text-align: center;
     text-decoration: none;
     font-weight: 600;
@@ -402,30 +352,32 @@ ul {
     box-sizing: border-box;
 }
 
-.verstuur-knop.uitgeschakeld {
+.verstuur-knop:disabled {
     background-color: #cccccc;
     color: #666666;
     cursor: not-allowed;
-    pointer-events: none;
+    opacity: 0.8;
 }
 
-.verstuur-knop:not(.uitgeschakeld):hover {
+.verstuur-knop:not(:disabled):hover {
     background-color: var(--lime);
 }
 
-/* ==========================================
-   Laatste waarschuwing
-   ========================================== */
-
-.waarschuwing {
-    font-size: 0.75rem;
-    color: var(--donkergroen);
+.form-status {
+    font-size: 0.88rem;
     margin-top: 12px;
     text-align: center;
+    line-height: 1.4;
 }
 
-.letop {
-    font-weight: 700;
+.form-status.succes {
+    color: var(--donkergroen);
+    font-weight: 600;
+}
+
+.form-status.fout {
+    color: #9e1b1b;
+    font-weight: 600;
 }
 
 @media (max-width: 1370px) {

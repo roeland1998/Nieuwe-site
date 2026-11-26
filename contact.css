@@ -91,3 +91,118 @@
         aspect-ratio: 1/1;
     }
 }
+
+.contact-formulier-sectie {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem 4rem 1rem;
+    box-sizing: border-box;
+}
+
+.contact-formulier-kaart {
+    background: var(--lichtgroen);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    max-width: 600px;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.contact-titel {
+    font-size: 1.5rem;
+    margin-bottom: 8px;
+    color: var(--donkergroen);
+}
+
+.contact-subtitel {
+    font-size: 0.92rem;
+    color: var(--donkergroen);
+    margin-bottom: 24px;
+    line-height: 1.45;
+}
+
+.contact-formulier-kaart .formulier-groep {
+    margin-bottom: 18px;
+}
+
+.contact-formulier-kaart .veld-label {
+    display: block;
+    font-weight: 600;
+    font-size: 0.88rem;
+    margin-bottom: 6px;
+    color: var(--donkergroen);
+}
+
+.contact-formulier-kaart input[type="text"],
+.contact-formulier-kaart input[type="email"],
+.contact-formulier-kaart textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--donkergroen);
+    border-radius: 6px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+    background-color: var(--lichtgroen);
+    color: var(--donkergroen);
+    box-sizing: border-box;
+    font-family: inherit;
+}
+
+.contact-formulier-kaart input[type="text"]:focus,
+.contact-formulier-kaart input[type="email"]:focus,
+.contact-formulier-kaart textarea:focus {
+    outline: none;
+    border-color: var(--lime);
+}
+
+.contact-formulier-kaart textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+.contact-formulier-kaart .verstuur-knop {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background-color: var(--paars);
+    color: var(--donkergroen);
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 6px;
+    margin-top: 20px;
+    transition: background-color 0.2s ease;
+    box-sizing: border-box;
+}
+
+.contact-formulier-kaart .verstuur-knop:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+.contact-formulier-kaart .verstuur-knop:not(:disabled):hover {
+    background-color: var(--lime);
+}
+
+.contact-formulier-kaart .form-status {
+    font-size: 0.88rem;
+    margin-top: 12px;
+    text-align: center;
+    line-height: 1.4;
+}
+
+.contact-formulier-kaart .form-status.succes {
+    color: var(--donkergroen);
+    font-weight: 600;
+}
+
+.contact-formulier-kaart .form-status.fout {
+    color: #9e1b1b;
+    font-weight: 600;
+}
