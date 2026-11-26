@@ -87,8 +87,13 @@ const translations = {
 
         // Contact
         contact_title: "Get in touch with me / hire me",
-        contact_text: "Would you like to collaborate? Discuss options? Know my shoe size? Chat about anything and everything? Feel free to get in touch using the links below. Send me a message or email, and of course, give me a follow on social media.",
+        contact_text: "Would you like to collaborate? Discuss options? Know my shoe size? Chat about anything and everything? Feel free to get in touch using the form below.",
         contact_email_label: "Email: ",
+        contact_form_title: "Send a message",
+        contact_form_subtitle: "If you have any questions or would like to get in touch, please leave a message down below.",
+        label_naam: "Name:*",
+        label_email: "E-mailadress:*",
+        label_bericht: "My question is...",
 
         // Footer
         footer_statement: "© 2026 Roeland Lenoir. All rights reserved. Everything on this website was created by me. Do not copy, share, or reuse any content, images, or text without asking my permission first.",
