@@ -94,6 +94,9 @@ const translations = {
         label_naam: "Name:*",
         label_email: "E-mailadress:*",
         label_bericht: "My question is...",
+        placeholder_bericht_contact: "Type your question or message here...",
+        placeholder_email_contact: "your.email@adres.com",
+        placeholder_naam_contact: "Name",
 
         // Footer
         footer_statement: "© 2026 Roeland Lenoir. All rights reserved. Everything on this website was created by me. Do not copy, share, or reuse any content, images, or text without asking my permission first.",

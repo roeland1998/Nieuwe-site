@@ -64,7 +64,7 @@ function updateRotterdamLabel() {
     const t = translationsObj[lang] || translationsObj['nl'] || {};
 
     const rotterdam_label_ja = t.rotterdam_label_ja || "Mogelijkheid om naar Rotterdam te komen";
-    const rotterdam_label_nee = t.rotterdam_label_nee || "Kan niet naar Rotterdam komen";
+    const rotterdam_label_nee = t.rotterdam_label_nee || "Ik kan niet naar Rotterdam komen en begrijp dat ik dan de reiskosten van Roeland dien te vergoeden.";
 
     if (rotterdamLabel && rotterdamCheckbox) {
         rotterdamLabel.textContent = rotterdamCheckbox.checked ? rotterdam_label_ja : rotterdam_label_nee;

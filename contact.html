@@ -150,18 +150,20 @@
                 <form id="contactForm">
                     <div class="formulier-groep">
                         <label class="veld-label" for="naam" data-i18n="label_naam">Naam: *</label>
-                        <input type="text" name="naam" placeholder="Naam" id="naam" required>
+                        <input type="text" name="naam" data-i18n-placeholder="placeholder_naam_contact"
+                            placeholder="Naam" id="naam" required>
                     </div>
 
                     <div class="formulier-groep">
                         <label class="veld-label" for="email" data-i18n="label_email">Email: *</label>
-                        <input type="email" name="email" placeholder="Jouw.email@adres.nl" id="email" required>
+                        <input type="email" name="email" data-i18n-placeholder="placeholder_email_contact"
+                            placeholder="Jouw.email@adres.nl" id="email" required>
                     </div>
 
                     <div class="formulier-groep">
                         <label class="veld-label" for="bericht" data-i18n="label_bericht">Mijn vraag: *</label>
-                        <textarea required cols="30" rows="4" name="bericht" id="bericht"
-                            placeholder="Typ hier je vraag of bericht..."></textarea>
+                        <textarea required cols="30" rows="4" data-i18n-placeholder="placeholder_bericht_contact"
+                            name="bericht" id="bericht" placeholder="Typ hier je vraag of bericht..."></textarea>
                     </div>
 
                     <!-- Onzichtbaar anti-spam veld (honeypot) -->
