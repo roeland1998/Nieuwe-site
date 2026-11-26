@@ -79,8 +79,6 @@
     object-fit: cover;
 }
 
-
-
 @media (max-width: 810px) {
     .contact-mij {
         grid-template-columns: 1fr;
@@ -100,7 +98,7 @@
 }
 
 .contact-formulier-kaart {
-    background: var(--lichtgroen);
+    background: var(--lime);
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     max-width: 600px;
@@ -143,7 +141,7 @@
     border-radius: 6px;
     font-size: 0.95rem;
     transition: border-color 0.2s ease;
-    background-color: var(--lichtgroen);
+    background-color: var(--lime);
     color: var(--donkergroen);
     box-sizing: border-box;
     font-family: inherit;
@@ -153,7 +151,7 @@
 .contact-formulier-kaart input[type="email"]:focus,
 .contact-formulier-kaart textarea:focus {
     outline: none;
-    border-color: var(--lime);
+    border-color: #ffffff;
 }
 
 .contact-formulier-kaart textarea {
@@ -187,7 +185,8 @@
 }
 
 .contact-formulier-kaart .verstuur-knop:not(:disabled):hover {
-    background-color: var(--lime);
+    background-color: var(--donkergroen);
+    color: var(--lime);
 }
 
 .contact-formulier-kaart .form-status {
